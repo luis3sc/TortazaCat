@@ -1,0 +1,418 @@
+* {
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    padding:0px;
+    
+  }
+  h1,h2{
+    text-transform: uppercase;
+    
+  }
+h1{
+  font-size: 1.2em;
+  text-align: center
+}
+h2{
+  font-size: 1.1em;
+}
+:root{
+    --primero: yellow;
+    --segundo: #200d07;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    background: chocolate;
+}
+
+.navbar {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  height: 70px;
+  background-color: white;
+  z-index: 2;
+  box-shadow: 0 10px 20px rgba(82, 74, 74, 0.3);
+}
+
+
+.circle {
+    position: fixed;
+    right: 0;
+    /*transform: translateX(-50%);*/
+    bottom: 165px;   
+    margin-bottom: 0;
+    height: 55px;
+    width: 13%;
+   border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    z-index: 2;
+    background-color: #ffffff;
+    transition: height 0.3s;
+  }
+  
+  .circle .plus-icon {
+    font-size: 27px;
+    transition: opacity 0.3s, transform 0.2s;
+  }
+  
+  
+  .circle .social {
+    position: absolute;
+    top: 195px;
+    color: white;
+    background-color: rgba(255, 212, 212, 0.308);
+    height: 60px;
+    width: 60px;
+    margin-bottom: 5px;
+    font-size: 25px;
+    cursor: pointer;
+  }
+  .circle a{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
+  
+  .icon-home,
+  .icon-settings {
+    font-size: 29px;
+    color: #fdc0df;
+  }
+  
+  .fas, .fab{
+      width: 20%;
+      height: 100%;
+      display: flex !important;
+      font-size: 20px;
+      align-items: center;
+      justify-content: center;
+      float: left;
+  }
+  .pri{
+    color: #200d07;
+  }
+  .sec{
+    color: #ffffff;
+  }
+  .fa-whatsapp:before{
+      font-size: 130% !important;
+  }
+  .fas:hover, .fas:active, .fas:visited{
+      background-color: #200d07;
+      color: #ffffff;
+  }
+    .popup {
+      height: 100vh;
+      position: fixed;
+      display: flex;
+      padding: 5%;
+      align-items: center;
+      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: center;
+      left: 0;
+      top: 0;
+      background-color: rgb(0 0 0 / 55%);
+      transform: scale(0);
+      opacity: 0;
+      visibility: hidden;
+    }
+    .popup:target {
+      transform: scale(1);
+      opacity: 1;
+      visibility: visible;
+      z-index: 2;
+      width: 100%;
+    }
+    .popup__close {
+      text-decoration: none;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: white;
+      position: fixed;
+      top: 20px;
+      right: 10px;
+      width: 40px;
+      height: 40px;
+      z-index: 2;
+      display: flex;
+      background-color: red;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50px;
+    }
+    .popup__close:hover {
+      color: white;
+    }
+    .popup p {
+      color: white;
+    }
+
+
+  /* seccion 1*/
+
+ @keyframes lava {
+    0% {
+      background-position-y: 300px;
+      background-position-x: -900px;
+    }
+    50% {
+      background-position-y: 350px;
+      background-position-x: -1400px;
+    }
+    100% {
+      background-position-y: 300px;
+      background-position-x: -900px;
+    }
+  }
+  .portada{
+    width:100vw;
+    height: 93vh;
+    box-sizing: border-box;
+    background-image:url("data:image/svg+xml;charset=UTF-8,%3c?xml version='1.0' encoding='utf-8'?%3e%3csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 1600 198' style='enable-background:new 0 0 1600 198;' xml:space='preserve'%3e%3cstyle type='text/css'%3e .st0%7bfill-rule:evenodd;clip-rule:evenodd;%7d %3c/style%3e%3cpath class='st0' d='M1600,121C1289,121,1190.1-0.2,789,0C389,0,289,121,0,121v77h1600C1600,198,1600,150,1600,121z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-size: 850%;
+    animation: lava 5s ease-in-out -.125s infinite;
+  }
+  .fondo-ma{
+    width: 100%;
+    height: 93%;
+    position: absolute;
+    background-image: url(fondo.jpg);
+    background-size: cover;
+    z-index: -1;
+  }
+  .enc{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10px;
+    padding: 10px;
+  }
+  .demo{
+    width: 100%;
+    float: left;
+    padding: 6% 0 6% 0;
+}
+
+  .enc img{
+    width: 75%;
+  }
+  .op{
+  color: white;   
+  }
+  /* swiper */
+  .swiper {
+    box-sizing: border-box;
+  }
+  
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+  
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+  
+  .swiper-slide img {
+    display: block;
+    width: 75%;
+    object-fit: cover;
+  }
+
+  
+.enc a{
+    display: flex;
+  }
+  .enc a{
+    width: 16%;
+  }
+  .iconosocial{
+    width: 80% !important;
+    padding: 7px;
+    box-sizing: content-box;
+    background: yellow;
+    border-radius: 50%;
+  }
+  #whatsapp{
+    background: #0b9400 !important;
+  }
+  
+  #facebook{
+    background: #0077c8 !important;
+  }
+  
+  
+  .ico{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-left: 20%;
+    padding-right: 20%;
+  }
+
+  .torta{
+    width: 44%;
+    float: left;
+    margin-top: 4%;
+    margin-left: 4%;
+  }
+  .torta img{
+    width: 100%;
+  }
+  
+  address {
+    padding: 2% 4%;
+  }
+  #ubi{
+    background-color: #200d07;
+    color: #ffffff;
+  }
+  .boton-contacto{
+    padding: 6%;
+    width: 100%;
+    margin-top: 4%;
+    background-color: #c80000;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 5%;
+    border-radius: 15px;
+    font-size: 92%;
+    border: none;
+    font-weight: bolder;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .ic{
+    width: 7% !important;
+  }
+  
+  #contacto{
+    display: flex;
+    padding: 4%;
+    flex-direction: column;
+    align-items: center;
+    background-color: yellow;
+  }
+  
+  .mapa{
+    width: 100%;
+    padding: 4%;
+    height: 500px;
+  }
+  
+#contacto img{
+  padding-bottom: 40px;
+  width: 85%;
+}
+
+.pad{
+  width: 100%;
+  height: 80px;
+  padding: 4%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#nostros p{  
+  padding: 4%;
+}
+
+.pd3{
+  padding: 3%;
+}
+.gr{
+
+  background: rgb(233, 233, 233);
+}
+hr{
+  width: 50%;
+  border: 2px solid #200d07;
+}
+
+
+
+.container-wrapper {
+	margin:5% auto;
+	position: relative;
+	width: 100%;
+  height: 100%;
+	overflow: hidden;
+  background-color: white;
+  border-radius: 20px;
+}
+
+/* CSS Tab styling is start here */
+
+	/* Tab menu styling*/
+	input.tab-menu-radio {
+		display: none;
+	}
+	label.tab-menu {
+		display: inline-block;
+		float: left;
+		padding:10px 0px;
+		cursor: pointer;
+		z-index: 99;
+    width:50%;
+    text-align:center;
+	}
+	/* End Tab menu styling*/
+
+	/* Tab content styling*/
+	
+	.tab-content {
+		top:-3px;
+		clear: both;
+		width: 100%;
+		position: relative;
+		padding:20px;
+	}	
+	/* End Tab content styling*/
+
+	/* CSS tab core */
+		.tab-menu-radio:checked + label {
+			-webkit-transition:all 1s; /* Optional */
+			-moz-transition:all 1s; /* Optional */
+			transition:all 1s; /* Optional */
+      border-bottom: 4px solid red;
+			color: #000;
+      border-top-right-radius: 5px;
+      border-top-left-radius: 5px;
+		}
+		.tab-content .tab {
+			height: 0;
+			opacity: 0;
+		}
+		#tab-menu1:checked ~ .tab-content .tab-1,
+		#tab-menu2:checked ~ .tab-content .tab-2,
+		#tab-menu3:checked ~ .tab-content .tab-3 {
+			-webkit-transition:opacity 1s; /* Optional */
+			-moz-transition:opacity 1s; /* Optional */
+			transition:opacity 1s; /* Optional */
+			height: auto;
+			opacity: 1;
+		}
+	/* End CSS tab core */
+
+/* CSS Tab Styling is end here */

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="testform.css">
+</head>
+<body>
+    <form novalidate>
+    
+        <!-- 
+        Notes!
+ 
+        To test for international characters you may need to change the unicode range 
+        http://jrgraphix.net/r/Unicode
+        a-zA-Z\u00C0-\u00FF includes letters in Latin-1 Supplement   
+       
+        Be careful not to make patterns too strict – validation is ment as a guide and does
+        guarantee a real number. E.g. 202-456-1111 validates as a phone number but is it?
+        .......it's The White House.
+        -->
+        <input type="text" name="name" id="name" autocomplete="off" autofocus required pattern="[a-zA-Z\u00C0-\u00FF\u0020\u0027\u002D]{2,}"/>
+        <label for="name">Name</label> 
+      
+        <!-- Email validation x@y.zz -->    
+        <input type="email" name="email" id="email" autocomplete="off" required pattern="(.+)@(.+){1,}\.(.+){2,}"/>
+        <label for="email">Email</label>
+        
+        <!-- US phone number validation
+        (111) 222-3333, 1112223333 or 111-222-3333
+        -->
+        <input type="tel" name="tel" id="tel" autocomplete="off" autocorrect="off" pattern="^(\([0-9]{3}\) |[0-9]{3}-)[0-9]{3}-[0-9]{4}$|[0-9]{9,}"/>
+        <label for="tel">Phone</label>
+       
+
+        <button>Submit</button>
+        <!-- 
+        IE10 does not support pointer-events: none 
+        If you care about IE10 you can add a disabled
+        button to display in case the form is invalid
+
+        You could also use a cover element to place
+        above the button   
+        -->
+        <button disabled>Submit</button>        
+
+    </form>
+</body>
+</html>

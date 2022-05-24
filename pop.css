@@ -1,0 +1,187 @@
+* {
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    padding:0px;
+  }
+  body{
+      width: 100vw;
+      height: 100vh;
+  }
+h1,h2{
+    text-transform: uppercase;
+  }
+h1{
+  font-size: 1.2em;
+  text-align: center
+}
+h2{
+  font-size: 1.1em;
+}
+.popup {
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    top: 0;
+    justify-content: center;
+  }
+  .popupsuper{
+    background-color: rgb(0 0 0 / 82%);
+    transform: scale(0);
+    opacity: 0;
+    visibility: hidden;
+  }
+  .popup:target {
+    transform: scale(1);
+    opacity: 1;
+    visibility: visible;
+    z-index: 2;
+    width: 100%;
+  }
+  .popup__close {
+    text-decoration: none;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+    position: fixed;
+    top: 20px;
+    right: 3%;
+    width: 40px;
+    height: 40px;
+    z-index: 2;
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+  }
+  .popup__close:hover {
+    color: white;
+  }
+  .pd20{
+    padding: 8% 5%;
+  }  
+  .contenedor-ad{
+    border-radius: 20px;
+  }
+  .container-wrapper {
+      position: absolute;
+      top: 5%;
+      width: 90%;
+    height: 82%;
+      overflow: hidden;
+    background-color: rgb(255, 255, 255);
+  }
+
+  .yape-flex{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .yape-flex img{
+    width: 65%;
+  }
+  .titulo{
+    height: 5%;
+  }
+  .info-pago{
+    padding: 12px;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border: 1px dashed #7e7e7e;
+    gap: 10px;
+  }
+  .recojo{
+    padding-bottom: 10px;
+    border-bottom: 2px dashed #7e7e7e ;
+  }  
+   .pagos{
+    display: flex;
+    gap: 10px;
+  }
+
+  .boton-pago{
+    width: 50%;
+    padding: 10px;
+    font-size: 1.2em;
+    color: white;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: flex-start;
+    display: flex;
+  }
+
+  #yape-color{
+    background-color: #721091 ;
+  }
+  #plin-color{
+    background-color: #018bf2;
+  }
+  #whatsapp{
+    background: #0b9400 !important;
+  }
+  #pinterest{
+    background-color: #d43f3a;
+  }
+
+  .boton-contacto{
+    padding: 4%;
+    width: 100%;
+    color: #ffffff;
+    text-transform: uppercase;
+    border-radius: 15px;
+    font-size: 92%;
+    border: none;
+    font-weight: bolder;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    column-gap: 15px;
+  }
+
+  
+.icon-copy{
+    position:relative;
+    padding: 0.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+  
+  }
+  
+  .confirmation{
+    background:#feba01;
+    color:#383838;
+    padding:10px 15px;
+    border-radius:3px;
+    display:none;
+    position:fixed;
+    bottom:20px;
+    left:5px;
+    z-index: 3;
+  }
+  .copy{
+    display:block;
+    max-width:204px;
+    overflow:hidden;
+    white-space:nowrap;
+        -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -o-box-sizing: border-box;
+      box-sizing: border-box;
+    word-wrap:break-word;
+    position:relative;
+  }
+  .copy::before{
+    content:'';
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#eaeaea+1,eaeaea+100&0+0,1+100 */
+  background: -moz-linear-gradient(left, rgba(234,234,234,0) 0%, rgba(234,234,234,0.01) 1%, rgba(234,234,234,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, rgba(234,234,234,0) 0%,rgba(234,234,234,0.01) 1%,rgba(234,234,234,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, rgba(234,234,234,0) 0%,rgba(234,234,234,0.01) 1%,rgba(234,234,234,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00eaeaea', endColorstr='#eaeaea',GradientType=1 ); /* IE6-9 */
+  }

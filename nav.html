@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="nav.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  <div class="principall">
+    <div class="tab-container">
+        <a href="#panel-one" class="tab is-active" data-tab="tab-1"><i class="material-icons">dashboard</i>Tortas</a>
+        <a href="#panel-two" class="tab" data-tab="tab-2"><i class="material-icons">events</i>Especiales</a>
+        <a href="#panel-three" class="tab" data-tab="tab-3"><i class="material-icons">settings</i>Postres</a>
+        <a href="#panel-three" class="tab" data-tab="tab-4"><i class="material-icons">settings</i>Cupcake</a>
+        <a href="#panel-four" class="tab" data-tab="tab-5"><i class="material-icons">settings</i>Dulces</a>
+        <a href="#panel-four" class="tab" data-tab="tab-6"><i class="material-icons">settings</i>Salados</a>
+    </div>
+    <div class="tab-content is-active" id="tab-1">
+      One</div>
+    <div class="tab-content" id="tab-2">
+      Two</div>
+    <div class="tab-content" id="tab-3">
+      Three</div>
+  <div class="tab-content" id="tab-4">
+        aearee</div>
+        <div class="tab-content" id="tab-5">
+          aASDASDA</div>
+          <div class="tab-content" id="tab-6">
+            SALADOSe</div>      
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+  $('.tab-container a').click(function() {
+    var tab_id = $(this).attr('data-tab');
+    $('.tab-container a').removeClass('is-active');
+    $('.tab-content').removeClass('is-active');
+    $(this).addClass('is-active');
+    $("#" + tab_id).addClass('is-active');
+  });
+});
+  </script>
+</body>
+</html>

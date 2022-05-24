@@ -1,0 +1,246 @@
+:root {
+  --primary-color: #187ac9;
+}
+
+/* Global Stylings */
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+input {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+}
+
+.width-50 {
+  width: 50%;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Progressbar */
+
+.progressbar {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  counter-reset: step;
+  margin: 0 auto;
+  margin-bottom: 38px;
+  max-width: 337px;
+}
+
+.progressbar::before,
+.progress {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 4px;
+  width: 100%;
+  background-color: #dcdcdc;
+  z-index: -1;
+}
+
+.progress {
+  background-color: #23c918;
+  width: 0%;
+  transition: 0.3s;
+}
+
+.progress-step {
+  width: 2.1875rem;
+  height: 2.1875rem;
+  background-color: #dcdcdc;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.progress-step::before {
+  counter-increment: step;
+  content: counter(step);
+}
+
+.progress-step::after {
+  content: attr(data-title);
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.progress-step-active {
+  background-color: #23c918;
+  color: #f3f3f3;
+}
+
+/* Form */
+.form {
+  width: 80%;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  border-radius: 0.35rem;
+  padding: 1.5rem;
+}
+
+.form-step {
+  display: none;
+  transform-origin: top;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.form-step-active {
+  display: block;
+}
+
+.input-group {
+  margin: 2rem 0;
+}
+
+@keyframes animate {
+  from {
+    transform: scale(1, 0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+}
+
+/* Button */
+.btns-group {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.btn {
+  padding: 0.75rem;
+  display: block;
+  font-size: 14px;
+  text-decoration: none;
+  background-color: var(--primary-color);
+  color: #f3f3f3;
+  text-align: center;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 200px;
+}
+
+.btn:hover {
+  box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--primary-color);
+  cursor: pointer;
+}
+
+.product-finder_step {
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+.product-finder_optionsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-basis: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.product-finder_option {
+    height: 241px;
+    width: 100%;
+    -webkit-appearance: unset;
+    -moz-appearance: unset;
+    appearance: unset;
+    background-color: #f8f8f8;
+    border-radius: 20px;
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 3px 6px #00000029;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #d6d6d6;
+    max-width: 372px;
+    cursor: pointer;
+}
+
+.product-finder_option-active {
+    border: 1px solid #0c2340;
+}
+
+@media (min-width: 700px) {
+  .product-finder_option {
+    margin-left: 24px;
+  }
+}
+
+.product-finder_imageContainer {
+    overflow: hidden;
+    z-index: 3;
+    width: 180px;
+    padding: 0 0 0 10px;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+.product-finder_Fit {
+    height: 128px;
+}
+.product-finder_optionDescription {
+    text-align: left;
+    max-width: 50%;
+    font-size: 12px;
+    padding: 0 15px;
+}
+
+.product-finder_option h5 {
+    letter-spacing: .36px;
+    color: #000;
+    opacity: 1;
+    text-transform: uppercase;
+    padding: 0;
+    margin: 0 0 18px;
+}
+
+.product-finder_optionDescription p {
+    margin: 0;
+    padding: 0;
+}
+
+.product-finder_optionBanner {
+    background: #187ac9;
+    color: #fff;
+    width: 100%;
+    padding: 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 16px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}

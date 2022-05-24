@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ruleta.css">
+    <link rel="stylesheet" href="testform.css">
+</head>
+<body>
+      <a href="index.html" class="popup__close">&times;</a>
+<script src="https://unpkg.com/d3@5.7.0/dist/d3.min.js"></script>
+<div class="container bkg">
+
+    <form novalidate>
+    <div class="buttons">
+            
+                <button class="difficulty__buttons current" value="10">
+                
+ 
+            </div>
+        <div class="bottom_buttons">
+            <div class="bottom_button push">
+               
+               
+             </div>
+            
+          
+        </div>
+        <input type="text" name="name" id="name" autocomplete="off" autofocus required pattern="[a-zA-Z\u00C0-\u00FF\u0020\u0027\u002D]{2,}"/>
+        <label for="name">Name</label> 
+      
+        
+        <!-- US phone number validation
+        (111) 222-3333, 1112223333 or 111-222-3333
+        -->
+        <input type="tel" name="tel" id="tel" autocomplete="off" autocorrect="off" autofocus required pattern="^(\([0-9]{3}\) |[0-9]{3}-)[0-9]{3}-[0-9]{4}$|[0-9]{9,}"/>
+        <label for="tel">Phone</label> 
+
+        <button id="push" class="push__button">Submit</button>
+        <button disabled>Submit</button> 
+        
+    </form>
+    <div id="chart">
+
+
+        <div class="chart__front"></div>
+        <div id="result"></div>
+    </div>
+    <img src="logo_tortaza.webp" alt="" srcset="">
+</div>
+</div>
+<div id="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>FELICIDADES GANASTE 👌</h2>
+           <!-- <span class="closeBtn">&times;</span>  -->
+        </div>
+        <div class="modal-body">
+            <div class="modal-body-name modal-body-container">
+                <div class="spin-result spin-result-name"></div>
+            </div>
+            <div class="modal-body-price modal-body-container">
+                <div class="modal-body-title">Válido Hasta:</div>
+                <div class="spin-result spin-result-price"></div>
+            </div>
+            
+          </div>
+          <div class="ubicacion-t">
+          <p class="bold">Ubicación Tortaza La molina</p>
+          <p style="float:left;">Av. Los Fresnos 1271</p>
+         <span style="margin-left: 10px;"> <a href="https://goo.gl/maps/uc9VFMGzLopWVatQ8" target="_blank">¿cómo llegar?</a>
+        </div></span>
+        <a href="index.html" class="button">   Finalizar</a>
+    </div>
+</div>
+
+<script>
+    // DATA
+const rawData = [
+  {
+    "cmc_rank": 1,
+    "ticker": "25% DSCT",
+    "name": "25% DSCT",
+    "full_name": "25% DSCT"
+  },
+  {
+    "cmc_rank": 2,
+    "ticker": "TORTA MEDIANA",
+    "name": "1TORTA MEDIANA",
+    "full_name": "TORTA MEDIANA"
+  },
+  // ee //
+  {
+    "cmc_rank": 3,
+    "ticker": "CUPCAKE",
+    "name": "CUPCAKE",
+    "full_name": "CUPCAKE"
+  },
+  // ee //
+  {
+    "cmc_rank": 4,
+    "ticker": "ALFAJORES",
+    "name": "ALFAJORES",
+    "full_name": "ALFAJORES "
+  },
+  {
+    "cmc_rank": 5,
+    "ticker": "EMPANADAS",
+    "name": "EMPANADAS",
+    "full_name": "EMPANADAS"
+  },
+  // ee //
+  {
+    "cmc_rank": 6,
+    "ticker": "TAJADA",
+    "name": "TAJADA ",
+    "full_name": "TAJADA"
+  },
+  // ee //
+  {
+    "cmc_rank": 7,
+    "ticker": "50% DSCTO",
+    "name": "50% DSCTO",
+    "full_name": "50% DSCTO"
+  },
+  {
+    "cmc_rank": 8,
+    "ticker": "75% DSCTO",
+    "name": "75% DSCTO",
+    "full_name": "75% DSCTO"
+  },
+  {
+    "cmc_rank": 9,
+    "ticker": "LO SENTIMOS",
+    "name": "LO SENTIMOS",
+    "full_name": "LO SENTIMOS"
+  },
+  {
+    "cmc_rank": 10,
+    "ticker": "TORTA GRATIS",
+    "name": "Torta gratis",
+    "full_name": "TORTA GRATIS"
+  }
+];
+
+// DOM ELEMENTS
+const box = document.querySelector('.difficulty__buttons');
+const buttons = Array.from(document.getElementsByClassName('difficulty__button'));
+const modal = document.getElementById('modal');
+//const closeBtn = document.querySelector('.closeBtn');
+let selection = document.querySelector('.current').value;
+
+// DATA
+let data = getData(selection);
+console.log(data)
+let top10 = [
+  {
+    "cmc_rank": 1,
+    "ticker": "25% DSCT",
+    "name": "1 VALE DE 25% DSCT",
+    "full_name": "1 PAQUETE DE 25% DSCT",
+    "price": "Viernes,18 2022"
+  },
+  {
+    "cmc_rank": 2,
+    "ticker": "1 TORTA MEDIANA",
+    "name": "1 TORTA MEDIANA",
+    "full_name": "1 TORTA MEDIANA",
+    "price": "Lunes,18 2022"
+  },
+  {
+    "cmc_rank": 3,
+    "ticker": "1 CUPCAKE",
+    "name":  "1 CUPCAKE",
+    "full_name":  "1 CUPCAKE",
+    "price": "Jueves,18 2023"
+  },
+  {
+    "cmc_rank": 4,
+    "ticker": "1 PAQUETE DE ALFAJORES",
+    "name": "1 PAQUETE DE ALFAJORES",
+    "full_name": "1 PAQUETE DE ALFAJORES",
+    "price": "Martes,18 2022"
+  },
+  {
+    "cmc_rank": 5,
+    "ticker": "1 PAQUETE DE EMPANADAS",
+    "name": "1 PAQUETE DE EMPANADAS",
+    "full_name": "1 PAQUETE DE EMPANADAS",
+    "price": "Jueves,18 2022"
+  },
+  {
+    "cmc_rank": 6,
+    "ticker": "1 TAJADA",
+    "name": "1 TAJADA",
+    "full_name": "1 TAJADA",
+    "price": "Domingo,18 2022"
+  },
+  {
+    "cmc_rank": 7,
+    "ticker": "1 Vale de 50% DSCTO",
+    "name": "1 Vale de 50% DSCTO",
+    "full_name": "1 Vale de 50% DSCTO",
+    "price": "Miercoles,25 2023"
+  },
+  {
+    "cmc_rank": 8,
+    "ticker": "1 Vale de 75% DSCTO",
+    "name": "1 Vale de 75% DSCTO",
+    "full_name": "1 Vale de 75% DSCTO",
+    "price": "Martes,10 2022"
+  },
+  {
+    "cmc_rank": 9,
+    "ticker": "1 Vale de 50% descuento",
+    "name": "1 Vale de 50% descuento",
+    "full_name": "1 Vale de 50% descuento",
+    "price": "Lunes,19 2022"
+  },
+  {
+    "cmc_rank": 10,
+    "ticker": "1 TORTA GRATIS",
+    "name": "1 TORTA GRATIS",
+    "full_name": "1 TORTA GRATIS",
+    "price": "Domingo,10 2022"
+  }
+];
+
+// PURE FUNCTIONS
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min)) + min; 
+}
+
+// SYNC FUNCTIONS
+function render() {
+    const padding   = { top: 1, right: 1, bottom: 1, left: 1};
+    const width     = 360 - padding.left - padding.right;
+    const height    = 360 - padding.top - padding.bottom;
+    const radius    = Math.min(width, height) / 2.2;
+    const spins     = 4;
+    const degrees   = spins * 360;
+    const color     = d3.scaleOrdinal(["#ffbc00","#dca200","#e0b12f","#f8c806", "#dca200"]);
+    let counter     = 0;
+    let picked      = 1000;
+
+    let fontSize;
+    if(selection > 50) {
+        fontSize = '15px';
+    } else {
+        fontSize = '15px';
+    }
+
+    let svg = d3.select('#chart').selectAll('svg').data([null]);
+    svg = svg
+        .enter().append('svg')
+        .merge(svg)
+        .data([data])
+            .attr('width', 360)
+            .attr('height', 500)
+    
+    const container = svg.append('g')
+        .attr('class', 'chartcontainer')
+        .attr('transform', `translate(${width/2 + padding.left},200)`);
+    
+    const wheel = container.append('g')
+        .attr('class', 'wheel');
+    
+    const pie = d3.pie().sort(null).value(function(d){return 1;});
+    
+    const arc = d3.arc()
+        .innerRadius(0)
+        .outerRadius(radius);
+    
+    const arcs = wheel.selectAll('g.slice')
+        .data(pie)
+        .enter()
+        .append('g')
+            .attr('class', 'slice');
+    
+    arcs.append('path')
+        .attr('fill', function(d,i){return color(i);})
+        .attr('d', function(d){return arc(d);});
+    
+    arcs.append("text").attr("transform", function(d){
+        d.innerRadius = 0;
+        d.outerRadius = radius;
+        d.angle = (d.startAngle + d.endAngle)/2;
+        return `rotate(${(d.angle * 180 / Math.PI - 90)})translate(${d.outerRadius -10})`;
+        })
+            .attr("text-anchor", "end")
+        .text( function(d, i) {
+            console.log(data[i].ticker);
+            return data[i].ticker;
+        })
+        .style('font-size', fontSize);
+    
+    // arrow
+    svg.append('g')
+            .attr('class', 'arrow')
+            .attr('transform', `translate(${(width + padding.left + padding.right)/2 - 15}, 12)`)
+        .append('path')
+            .attr('d', `M0 0 H30 L 15 ${Math.sqrt(3)/2*30}Z`)
+            .style('fill', '#ff0000');
+    
+    // push button
+    const push = d3.select('#push');
+    
+    push.on('click', spin);
+    
+     // FUNCTIONS
+    function spin(d){
+        counter++;
+    
+        const piedegree         = 360 / data.length;
+        const randomAssetIndex  = getRandomInt(0, data.length);
+        const randomPieMovement = getRandomInt(1, piedegree);
+        
+        rotation = (data.length - randomAssetIndex) * piedegree - randomPieMovement + degrees;
+    
+        wheel.transition()
+            .duration(3000)
+            .attrTween('transform', rotTween)
+            .ease(d3.easeCircleOut)
+            .on('end', function(){
+    
+                let result = d3.select('#result').data([null]);
+                result = result
+                    .enter()
+                    .append('text')
+                        .attr('class', 'result')
+                    .merge(result)
+                        .text(data[randomAssetIndex].ticker)
+                        .style('font-size', '0')
+                        .style('font-weight', '700');
+                
+
+                let name = d3.select('.spin-result-name').data([null]);
+                name = name
+                .enter()
+                .append('text')
+                    .attr('class', '')
+                .merge(name)
+                    .text(` ${top10[randomAssetIndex].name}`)
+
+                
+
+                let price = d3.select('.spin-result-price').data([null]);
+                price = price
+                .enter()
+                .append('text')
+                    .attr('class', '')
+                .merge(price)
+                    .text(` ${top10[randomAssetIndex].price}`);
+                
+                
+                let details = d3.select('#modal').data([null]);
+                details = details
+                    .enter()
+                    .merge(details)
+                        .style('display', 'flex') 
+                        .style('justify-content', 'center') 
+                        .style('align-items', 'center') 
+            });
+    }
+    
+    function rotTween() {
+        let i = d3.interpolate(0, rotation);
+        return function(t) {
+            return `rotate(${i(t)})`;
+        };
+    }
+}
+
+function getData(value) {
+    let array = [];
+
+    for(let i = 0; i < value; i++) {
+        array.push(rawData[i]);
+    }
+
+    return array;
+}
+
+function updateSelection(e) {
+    buttons.forEach(button => {
+        button.classList.remove('current');
+    });
+
+    if(e.target.classList.contains('difficulty__button')) {
+        e.target.classList.add('current');
+    }
+
+    selection = document.querySelector('.current').value;
+    data = getData(selection);
+    render();
+}
+
+function closeModal() {
+    modal.style.display = 'none';
+}
+
+function outsideClick(e) {
+    if(e.target == modal) {
+        modal.style.display = 'none';
+    }
+}
+
+// EVENT LISTENERS
+box.addEventListener('click', updateSelection);
+//closeBtn.addEventListener('click', closeModal);
+//window.addEventListener('click', outsideClick);
+window.onload = render;
+</script>
+</body>
+</html>

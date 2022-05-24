@@ -1,0 +1,23 @@
+
+<a class="add_product" product="SN" precio ="50.00" href=""><i class="fas fa-plus"></i> Agregar</a>
+
+
+<a class="add_product" product="FDK" precio ="28.00" href=""><i class="fas fa-plus"></i> Agregar</a>
+
+$('.add_product').click(function(e){
+        e.preventDefault();
+        var producto = $(this).attr('product');
+        var precio = $(this).attr('precio');
+        
+                    $('.bodyModal').html('<form action="" method="post" name="form_add_producto" id="form_add_producto" onsubmit="event.preventDefault(); sendDataProduct();">'+
+                                        '<h1><i class="fas fa-cubes" style="font-size: 45pt;"></i><br>Producto</h1><br>'+
+                                        '<h2 class="name_producto"><i class="fas fa-birthday-cake"></i> '+producto+'</h2>'+
+                                        '<h2 class="name_producto">Precio: '+precio+'</h2><br>'+
+                                        '<div class="alert alertAddProducto"></div>'+
+                                        '<button type="submit" class="btn_new"><i class="fas fa-plus"></i> Agregar</button>'+
+                                        '<a href="#" class="btn_ok closeModal" onclick="closeModal();"><i class="fas fa-ban"></i> Cerrar</a>'+
+                                    '</form>');
+                   
+
+        $('.modal').fadeIn();
+ });
