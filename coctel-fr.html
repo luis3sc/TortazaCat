@@ -7,6 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="nav.css">
     <link rel="stylesheet" href="test.css">
+    <link rel="stylesheet" href="steps.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
@@ -171,14 +172,34 @@
               <a href="#inicio" class="boton-contacto social arriba" id="mensaje" >Regresar</a>
                </div>
         </div>
-
+        <!--PASOSCOMPRA-->
         <!--PASOS-->
         <div class="popup popupsuper pd20" id="paso">
-          <a href="#inicio" class="popup__close">&times;</a>
+          <a href="#pago" class="popup__close">&times;</a>
           <div class="container-wrapper txtcntr  contenedor-ad pd20 yape-flex">
-              <div class="titulo">
-                <p>paso 1</p>
-                <h2>Agregar Contacto</h2>
+            <div class="superior yape-flex">
+            <div class="stepper-wrapper ">
+              <div class="stepper-item completed">
+                <div class="step-counter">1</div>
+                <div class="step-name">Paso 1</div>
+              </div>
+              <div class="stepper-item ">
+                <div class="step-counter">2</div>
+                <div class="step-name">Paso 2</div>
+              </div>
+              <div class="stepper-item ">
+                <div class="step-counter">3</div>
+                <div class="step-name">Paso 3</div>
+              </div>
+              <div class="stepper-item">
+                <div class="step-counter">4</div>
+                <div class="step-name">Paso 4</div>
+              </div>
+            </div>
+          </div>
+            <div class="popcentt yape-flex">
+            <div class="titulo">
+              <h2>Agregar Contrato</h2>               
               </div>
              <div>
               <p>Agregar el siguiente numero:</p>
@@ -195,16 +216,38 @@
               <a href="#inicio" class="boton-contacto social arriba" id="mensaje" >Regresar</a>
               <a href="#paso2" class="boton-contacto social arriba" id="pinterest" >Continuar</a>
             </div> 
+          </div>
             </div>
         </div>
 
 
         <!--PASO 2-->
         <div class="popup popupsuper pd20" id="paso2">
-          <a href="#inicio" class="popup__close">&times;</a>
+          <a href="#pago" class="popup__close">&times;</a>
           <div class="container-wrapper txtcntr contenedor-ad pd20 yape-flex">
-              <div class="titulo">
-                <p>paso 2</p>
+          
+            <div class="superior yape-flex">  
+            <div class="stepper-wrapper">
+              <div class="stepper-item completed">
+                <div class="step-counter">1</div>
+                <div class="step-name">Paso 1</div>
+              </div>
+              <div class="stepper-item completed ">
+                <div class="step-counter">2</div>
+                <div class="step-name">Paso 2</div>
+              </div>
+              <div class="stepper-item ">
+                <div class="step-counter">3</div>
+                <div class="step-name">Paso 3</div>
+              </div>
+              <div class="stepper-item">
+                <div class="step-counter">4</div>
+                <div class="step-name">Paso 4</div>
+              </div>
+            </div>
+          </div> 
+          <div class="popcentt yape-flex">
+            <div class="titulo">
                 <h2>Selecciona el método de Pago</h2>
               </div>            
               <div class="pagos">
@@ -215,35 +258,55 @@
            
               <a href="#paso" class="boton-contacto social arriba" id="mensaje" >Regresar</a>
                </div>
+              </div>
         </div>
 
  <!-- contactar -->
  <div class="popup popupsuper pd20 " id="yapepago">
   <a href="#pago" class="popup__close">&times;</a>
   <div class="container-wrapper txtcntr contenedor-ad pd20 yape-flex">
+    <div class="superior yape-flex">  
+    <div class="stepper-wrapper">
+      <div class="stepper-item completed">
+        <div class="step-counter">1</div>
+        <div class="step-name">Paso 1</div>
+      </div>
+      <div class="stepper-item completed ">
+        <div class="step-counter">2</div>
+        <div class="step-name">Paso 2</div>
+      </div>
+      <div class="stepper-item completed">
+        <div class="step-counter">3</div>
+        <div class="step-name">Paso 3</div>
+      </div>
+      <div class="stepper-item">
+        <div class="step-counter">4</div>
+        <div class="step-name">Paso 4</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="popcentt yape-flex">
     <div class="titulo">
-      <p>paso 3</p>
       <h2>Realizar el Pago</h2>
     </div>
-     <p>Realice el Yapeo al siguiente numero y guarde el comprobante.</p>
-     
+     <p>Yapee al siguiente numero y tome captura de pantalla.</p>
+     <img class="qrpago" src="QR yape plin.png" alt="">
      <div class="numero">
       <div class="num copy">998881052</div>
       <button class="icon-copy">
        COPIAR
       </button></div>
        
-      <div>
-      </div>
      <!-- <p>Monto a pagar con Yape</p>
       <h4 class="precio" id="precioSelects" >s/ 50.00</h4>
--->
-     
+-->     
       <a href="https://play.google.com/store/apps/details?id=com.bcp.innovacxion.yapeapp&hl=es" target="_blank" class="boton-contacto social arriba" id="yape-color" > Abrir Yape</a>
       <div class="flxxx">
       <a href="#paso2" class="boton-contacto social arriba" id="mensaje" >Regresar</a>
       <a href="#paso4" class="boton-contacto social arriba" id="pinterest" > Continuar</a>
     </div>
+  </div>
     </div>
        
 </div>
@@ -253,24 +316,41 @@
 <div class="popup popupsuper pd20" id="paso4">
   <a href="#pago" class="popup__close">&times;</a>
   <div class="container-wrapper txtcntr contenedor-ad pd20 yape-flex ">
-      <div class="titulo">
-        <p>paso 4</p>
+    <div class="superior yape-flex">  
+    <div class="stepper-wrapper">
+      <div class="stepper-item completed">
+        <div class="step-counter">1</div>
+        <div class="step-name">Paso 1</div>
+      </div>
+      <div class="stepper-item completed ">
+        <div class="step-counter">2</div>
+        <div class="step-name">Paso 2</div>
+      </div>
+      <div class="stepper-item completed">
+        <div class="step-counter">3</div>
+        <div class="step-name">Paso 3</div>
+      </div>
+      <div class="stepper-item completed">
+        <div class="step-counter">4</div>
+        <div class="step-name">Paso 4</div>
+      </div>
+    </div>
+  </div>
+  <div class="popcentt yape-flex">
+    <div class="titulo">
       <h2>Enviar comprobante</h2>
       </div>
       <p >Confirme su pago enviando la captura de pantalla de la constancia adjuntando la hora, tienda y fecha en el mensaje vía Whastapp.</p>
-      
       <div class="numero">
         <div class="num copy">998881052</div>
-        <a class="icon-copy" href="https://bit.ly/MolinaCatalogo">Enviar Mensaje  </a>
+        <a class="icon-copy" href="https://bit.ly/MolinaCatalogo">Enviar Whastapp  </a>
     </div>
-    
-
-      
     <div class="flxxx">
       <a href="#paso2" class="boton-contacto social arriba" id="mensaje" >Regresar</a>
       <a href="https://bit.ly/MolinaCatalogo" class="boton-contacto social arriba" id="pinterest" >Finalizar Compra</a>
     </div>
-      
+  </div>
+
        </div>
 </div>
 
