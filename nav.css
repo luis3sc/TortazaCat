@@ -233,7 +233,8 @@ button:focus {
   width: 60%;
   height: 40px;
   background-color: #ff0000;
-  color: rgb(58, 41, 41);
+  color: #fff;
+  font-weight: 600;
   border-radius: 10px;
 }
 .prodconsultar{
@@ -259,13 +260,24 @@ color: #fff;
 .txtcntr{
   text-align: center;
 }
+.icon-men{
+  width: 30px;
+}
+.superior{
+  width: 100%;
+  height: 15%;
+  border-bottom: 1px dashed #000;
+}
+.popcentt{
+  height: 85%;
+  width: 100%;
+}
+.qrpago{
+width: 10em;
+}
 @media only screen and (min-width: 720px)  {
-  .tab-container{
-    height: 45px;
+  .tab-container{       
     justify-content: center;
-  }
-  .tab{
-    flex-direction: row;
   }
   .fllex{
     flex-direction: row;

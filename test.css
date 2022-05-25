@@ -175,7 +175,7 @@ a{
 
   
   .boton-contacto{
-    padding: 4%;
+    padding: .6em;
     width: 100%;
     color: #ffffff;
     text-transform: uppercase;
@@ -227,7 +227,7 @@ a{
     background-color: #d43f3a;
   }
   .pd20{
-    padding: 8% 5%;
+    padding: 1em;
   }  
   
   .popup {
@@ -350,7 +350,7 @@ a{
     gap: 10px;
   }
   .numero{
-    width: 100%;
+    width: 90%;
     display: flex;
   }
   
@@ -383,5 +383,8 @@ a{
   .row{
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
  
+  }
+  .popup__close{
+    right: 33%;
   }
 }
