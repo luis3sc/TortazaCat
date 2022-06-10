@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cocktel de Frutas</title>
+    <title>Torta Helada</title>
     <link rel="stylesheet" href="nav.css">
     <link rel="stylesheet" href="test.css">
     <link rel="stylesheet" href="steps.css">
@@ -33,32 +33,30 @@
 </header>
     <div  class="principall overf gris-f ">
       <!--  <a href="index.html" class="popup__close">&times;</a>-->
-    <div class="titulo-g mxwd"><a href="combinacion.html">Catálogo Virtual</a> /Cocktel de Frutas </div>
+    <div class="titulo-g mxwd"><a href="combinacion.html">Catálogo Virtual</a> /Torta Helada</div>
             <div class="container mxwd fllex pd10">
               <div class="prodct">
-                <img class="img-prd" src="./cock.webp" alt="">
+                <img class="img-prd" src="./tortahelada.webp" alt="">
               </div>
               <div class="prodct flex-prd">
-                <h3>Cocktel de frutas</h3>
+                <h3>Torta Helada</h3>
                 <div class="descr-prd">
                 <p>
-                  Keke de vainilla con relleno de manjar en la primera 
-                  capa y en la segunda capa con frutas (uva, pera, durazno 
-                  y cereza bañado en chantilly, empastado con mil hojas.
-                  </p>
+Gelatina de fresa con mouse de fresa y 
+discos de chocolate con almibar especial, 
+decorado con chantilly y filigrama.  
+                </p>
               </div>
                   <div>
                     <p class="bo">Selecciona el tamaño</p>
-                    <select id="tmnSelect-chantillyfruta" class="select">
-                      <option value="3">Grande</option>
+                    <select id="tmnSelect-tortasfrias" class="select">
+                      <option value="2">Grande</option>
                       <option value="1">Pequeño</option>
-                      <option value="2">Mediano</option>
-                      <option value="4">Super G.</option>
                     </select>
                 </div>
                 <div>
                   <p class="bo">Precio total</p>
-                  <p id="precioSelecte" class="t-precio">S/ 55.00</p>
+                  <p id="precioSelecteh" class="t-precio">S/ 55.00</p>
                 </div>
                 <div class="botones-prd">
                   <a href="#paso" class="prodcomprar flex-centr">Ordenar ahora</a>
@@ -454,7 +452,7 @@ var btntxt = $(this).text();
 var copy = $(this).parent().find('.copy').text();
 
 var $temp = $("<input>");
-$("body").append($temp);
+$("body").append($temp); 
 $temp.val(copy).select();
 document.execCommand("copy");
 $temp.remove();

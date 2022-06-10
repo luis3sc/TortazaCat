@@ -154,7 +154,7 @@ a{
 
 .torta{
     width: 100%;
-    background:#ededed;
+    background:#ffffff;
     padding: 4px;
     display: flex;
     flex-direction: column;
@@ -172,10 +172,9 @@ a{
   .torta-c img{
     width: 100%;
   }
-
   
   .boton-contacto{
-    padding: .6em;
+    padding: .9em;
     width: 100%;
     color: #ffffff;
     text-transform: uppercase;
@@ -342,8 +341,8 @@ a{
     display: flex;
   }
   .recojo{
-    padding-bottom: 10px;
-    border-bottom: 2px dashed #7e7e7e ;
+    padding: 10px 40px;
+    border: 2px dashed #7e7e7e ;
   }
   .pagos{
     display: flex;
@@ -366,9 +365,12 @@ a{
 .icon-copy{
   width: 35%;
     position:relative;
-    padding: 0.5rem;
+    display: flex;
+    align-items: center;
     font-size: 1rem;
     font-weight: 700;
+    background-color: #f00;
+    color: #fff;
     border: 1px solid #000;
   }
 
@@ -378,7 +380,6 @@ a{
 }
 
 /*  responsive */
-
 @media only screen and (min-width: 720px)  {
   .row{
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -387,4 +388,67 @@ a{
   .popup__close{
     right: 33%;
   }
+  .env-wsp{
+    position: fixed;
+    right: 35px;
+  }
+}
+
+
+/** SCROLL SLIDER PRODUCTOS**/
+
+/* limit width so that content will need to scroll */
+.sl {
+  max-width: 1120px;
+  width: 100%;
+  margin: auto;
+}
+
+/* SCROLL SNAPPING */
+.scroll-container {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+.scroll-item {
+  scroll-snap-align: center;
+}
+/* make 3rd item bigger to show that items don't need to have the same width */
+
+
+/* GRID LAYOUT */
+.scroll-container[data-layoutmethod="grid"] {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  display: grid;
+  grid: auto / auto-flow max-content;
+  grid-gap: 1em;
+  align-items: center; /* vertically align children */
+}
+
+
+/* remove list styles */
+ul {
+  list-style: none;
+}
+
+.scroll-item {
+  /* make it square */
+  width: 16em;  
+
+  /* some basic styling */
+  background: #ccc;
+  border-radius: 0.2em;
+
+  /* center contents */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.env-wsp{
+  width: 60px;
+  position: fixed;
+  background-color: #0dc143;
+  bottom: 70px;
+  right: 5px;
+  border-radius: 50px;
 }

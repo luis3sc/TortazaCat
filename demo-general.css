@@ -908,3 +908,26 @@ nav {
 .qr-tienda{
   width: 100%;
 }
+
+@media (min-width: 400px) { 
+  .portada{
+    max-width: 400px;
+    margin: auto;
+  }
+  .fondo-ma{
+    width: 400px;
+  }
+  .dcata{
+    max-width: 390px;
+    padding: 1%;
+    bottom: 80px;
+    height: 80px;
+  }
+ .navbar{
+   max-width: 390px;
+   padding: 2px;
+ }
+ .h-95{
+   height: 60px;
+ }
+}
