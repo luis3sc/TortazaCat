@@ -1,0 +1,411 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+}
+body{
+    font-family: roboto, arial, sans-serif;
+}
+:root {
+    --primario: #1e90ff;
+    --secundario: #727272;
+    --terciario: #353535;
+    --cuatro: #f2f2f2;
+    --negro: #000000;
+    --white: #ffffff;
+  }
+  a{
+    text-decoration: none;
+    color: var(--negro);
+  }
+
+h2{
+  color: var(--terciario);
+  font-size: 2em;
+}
+/** Pefil **/
+.perfil, .portada, .promocion, .catalogo    {
+    width: 100%;
+}
+.portada{
+    overflow: hidden;
+    background-color: var(--white);
+    max-height: 305px;
+    position: relative;
+}
+.portada img:nth-child(odd){
+    z-index: 2;
+}
+.portada img:nth-child(even) { 
+    position: absolute;
+    filter: blur(50px);
+  }
+.perfil{
+    position: relative;
+    display: grid;
+    justify-items: center;
+}
+.perfil-logo{
+    position: absolute;
+    z-index: 2;
+    bottom: 20px;
+}
+.perfil-logo, .perfil-logo img{
+    width: 130px;
+   
+}
+.borde-circulo{
+    border-radius: 50%;
+}
+.nav{
+    max-width: 450px;
+    height: 75px;
+    bottom: 0;
+    padding: 15px;
+    margin: auto;
+}
+.nav a:nth-child(even) { 
+    text-align: end;
+  }
+/** Pefil **/
+/** section **/
+.mgn-a{
+    margin: auto;
+}
+/** section **/
+.pd-20{
+    padding: 1em;
+}
+.pd-h{
+  padding: 1em 0;
+}
+/** flex **/
+.flex{
+    display: flex;
+}
+.flex-centro{
+    justify-content: center;
+    align-items: center;
+}
+.flex-c{
+  flex-direction: column;
+}
+/** flex **/
+/** grid **/
+.row, .row-2, .grid{
+  display: grid;
+}
+.row {
+  grid-template-columns: repeat(auto-fill, minmax(165px, 1fr));
+
+}
+.row-2{
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr ));
+}
+/** grid-gap **/
+.gapp5{
+  gap: .5em;
+}
+
+.gapp8{
+  gap: .8em;
+}
+
+.gap1{
+  gap: 1em;
+}
+
+.gap2{
+  gap: 2em;
+}
+
+/** maxwidth **/
+.m-wd{
+    max-width: 1180px;
+    width: 100%;
+}
+/** maxwidth **/
+/** Swiper Slider **/
+.swiper-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.swiper-slide {
+    background-color: #5e42ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.swiper-slide img{
+ height: 100%;
+}
+.swiper-hero-progress {
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    width: 0;
+    height: 3px;
+    background: var(--primario);
+    z-index: 1;
+}
+/** Swiper Slider **/
+/** Tab Navegador Menu **/
+
+.tab-container {
+    width: 100%;
+    max-width: 750px;
+    display: flex;
+    overflow: auto;
+    background-color: var(--blanco);
+  }
+  .tab-container a:hover{
+    background-color: rgb(255, 217, 0);
+  }
+
+  .tab {
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    text-align: center;
+    color: var(--segundo);
+    border: 1px solid var(--secundario);
+  }
+  
+  .tab.is-active {
+    background-color: rgb(255, 217, 0);
+  }
+  
+  .tab.is-active:after {
+    height: 1px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: #3f51b5;
+    transition: all 1s ease-in-out;
+  }
+  
+  .tab-content {
+    width: 100%;
+    display: none;
+  }
+  
+  .tab-content.is-active {
+    display: block;
+  }
+
+  .icon-men{
+    width: 30px;
+  } 
+
+  .flxx{
+    display: flex;
+    gap: 5px;
+  }
+
+  
+.column {
+    display: none;
+}
+.show {
+    display: block;
+}
+  /*  responsive */
+@media only screen and (min-width: 720px)  {
+    .row{
+      grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+    }
+    .row-2{
+      grid-template-columns: 1fr 1fr;
+    }
+    .tab {
+      flex-direction: row;
+      
+    }
+    .tab-container{
+      gap: 1em;
+    }
+    .perfil-logo img, .perfil-logo{
+      width: 200px;
+  }
+  }
+
+
+  /** TORTA **/
+  
+.torta{
+    width: 100%;
+    padding: 4px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #d0d0d0;
+  }
+  .torta-c{
+    width: 100%;
+    padding: 8px;
+  }
+  .torta-titulo{
+    font-size: 12pt;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  .torta-c img{
+    width: 100%;
+  }
+  .flex-dsc{
+    display: flex;
+    flex-direction: column;
+    gap: .3em;
+  }
+
+  
+.porciones{
+    font-size: .9em;
+    font-style: italic;
+    color: #797979;
+    font-weight: 500;
+  }
+  .torta-precio{
+    font-size: 1.2em;
+    font-weight: bolder;
+    color: #ff0000;
+  }
+
+  .boton-contacto{
+    padding: .9em;
+    width: 100%;
+    color: #ffffff;
+    text-transform: uppercase;
+    border-radius: 15px;
+    font-size: 92%;
+    border: none;
+    font-weight: bolder;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 15px;
+  }
+  #pinterest{
+    background-color: #d43f3a;
+  }
+  /* footer **/
+  .reds-logos img, .footer-post img{
+    width: 30px;
+    margin-right: 12px;
+  }
+
+.social{
+  display: flex;
+  align-items: center;
+}
+.info, .promocion{
+  background-color: var(--cuatro) ;
+}
+
+.cred{
+  text-align: center;
+  border-top: 1px solid var(--terciario);
+}
+
+
+/* pop up */
+
+
+.popup {
+  height: 100vh;
+  position: fixed;
+  display: flex;
+  top: 0;
+  justify-content: center;
+  align-items: center;
+}
+.popupsuper{
+  background-color: rgb(0 0 0 / 82%);
+  transform: scale(0);
+  opacity: 0;
+  visibility: hidden;
+}
+.popup:target {
+  transform: scale(1);
+  opacity: 1;
+  visibility: visible;
+  z-index: 2;
+  width: 100%;
+}
+.rel{
+  position: relative;
+  max-width: 450px;
+  height: 95%;
+  max-height: 700px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.popup__close {
+  text-decoration: none;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: white;
+  position: absolute;
+  top: 20px;
+  right: 3%;
+  width: 40px;
+  height: 40px;
+  z-index: 2;
+  background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+}
+.popup__close:hover {
+  color: white;
+}
+
+.container-wrapper {
+ 
+  max-width: 400px;
+  width: 90%;
+height: 90%;
+  overflow: auto;
+background-color: rgb(255, 255, 255);
+}
+.contenedor-ad{
+  border-radius: 20px;
+}
+.mapa{
+  width: 100%;
+  padding: 4% 0;
+  height: 88%;
+}
+.qr img{
+  width: 80%;
+}
+
+/* ubicacion */
+
+.flex-x{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.texto{
+  padding: 10px;
+}
+.texto img{
+  width: 6%;
+}
+.bd{
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+.textod{
+  padding-left: 30px;
+}
