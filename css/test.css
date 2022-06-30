@@ -1,0 +1,454 @@
+   /* Wildcard styling */
+
+      /* filter */
+      .cont-filt{
+          width: 100%;
+          height: 35px;
+          background-color: #ffd900;
+          position: fixed;
+          bottom: 60px;
+          left: 0px;
+      }
+      #filtering{
+        width: 100%;
+        height: 35px;
+        display: flex;
+        gap: 5px;
+        overflow: auto;
+        padding: 0 5px;
+        flex-direction: column;
+        flex-wrap: wrap;
+      }
+/* Padding for whole body */
+   
+/* Styling h2 tag */
+      
+/* Anchor tag decoration */
+    
+      
+.row {
+    margin: 0px -14px;
+    padding: 8px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 8px;
+}
+    
+      
+.column {
+    display: none;
+}
+      
+/* Paragraph decoration */
+p {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+}
+      
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+      
+      
+.show {
+    display: block;
+}
+
+h1,h2{
+    text-transform: uppercase;
+  }
+h1{
+  font-size: 1.2em;
+  text-align: center
+}
+h2{
+  font-size: 1.1em;
+}
+a{
+    text-decoration: none;
+  }
+  .h-95{
+    height: 90px;
+  }
+  .h-8{
+    height: 8%;
+  }
+  .h-130{
+    height: 22%;
+  }
+    .gap-2{
+      gap:3%;
+    }
+    .gap-m{
+      column-gap: 3%;
+      row-gap: 13%;
+    }
+  .boton-cuadrado{
+      width: 22.5%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        list-style: none;
+        text-align: center;
+        font-size: 1rem;
+        font-weight: 500;
+        border-radius: 20px;
+    }
+    .wmd{
+      width: 48.5%;
+      border-radius: 20px;
+      float: left;
+    }
+    .wct{
+      width: 100%;
+      border-radius: 20px;
+    }
+    .flex-c{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .yape-flex{
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    .contenedor-ad span{
+      margin-left: 10px;
+    }
+    .siguenos{
+      width: 100%;
+      height: 11%;
+      position: absolute;
+      bottom: 21%;
+    }
+      
+/* Style the filter buttons */
+.bttn {
+    border: none;
+    height: 35px;
+    background-color: #e9c600;
+}
+       
+.bttn:hover {
+    background-color: #e9c600;
+    opacity: 0.8;
+}
+      
+.bttn.active {
+    background-color: #160502;
+    color: white;
+}
+
+
+.torta{
+    width: 100%;
+    background:#ffffff;
+    padding: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .torta-c{
+    width: 100%;
+    padding: 8px;
+  }
+  .torta-titulo{
+    font-size: 12pt;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  .torta-c img{
+    width: 100%;
+  }
+  
+  .boton-contacto{
+    padding: .9em;
+    width: 100%;
+    color: #ffffff;
+    text-transform: uppercase;
+    border-radius: 15px;
+    font-size: 92%;
+    border: none;
+    font-weight: bolder;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    column-gap: 15px;
+  }
+  
+  #instagram{
+    background-color: #833AB4;
+  }
+  #yape-color{
+    background-color: #721091 ;
+  }
+  #plin-color{
+    background-color: #018bf2;
+  }
+  #whatsapp{
+    background: #0b9400 !important;
+  }
+  #twitter{
+    background-color: #55acee !important;
+  }
+  #twitch{
+    background-color: #6441a5;
+  }
+  #telegram{
+    background-color: #38aee4;
+  }
+  #facebook{
+    background: #0077c8 !important;
+  }
+  #skype{
+    background-color: #00aff0;
+  }
+  #mensaje{
+    background-color: rgb(143, 143, 143);
+  }
+  #linkedin{
+    background-color:#0e76a8 ;
+  }
+  #pinterest{
+    background-color: #d43f3a;
+  }
+  .pd20{
+    padding: 1em;
+  }  
+  
+  .popup {
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    top: 0;
+    justify-content: center;
+  }
+  .popupsuper{
+    background-color: rgb(0 0 0 / 82%);
+    transform: scale(0);
+    opacity: 0;
+    visibility: hidden;
+  }
+  .popup:target {
+    transform: scale(1);
+    opacity: 1;
+    visibility: visible;
+    z-index: 2;
+    width: 100%;
+  }
+  .popup__close {
+    text-decoration: none;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+    position: fixed;
+    top: 20px;
+    right: 3%;
+    width: 40px;
+    height: 40px;
+    z-index: 2;
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+  }
+  .popup__close:hover {
+    color: white;
+  }
+  .boton-cerrar{
+    width: 130px;
+    height: 50px;
+    color: #fff;
+    position: absolute;
+    border-radius: 50px;
+    z-index: 1;
+    bottom: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .lado-r{
+    right: 40px;
+  }
+  .lado-l{
+    left: 40px;
+  }
+
+  
+  .contenedor-ad{
+    border-radius: 20px;
+  }
+  .container-wrapper {
+      position: absolute;
+      top: 5%;
+      width: 90%;
+      max-width: 400px;
+    height: 82%;
+      overflow: hidden;
+    background-color: rgb(255, 255, 255);
+  }
+
+  
+  .texto-servicio{
+    width: 100%;
+    height: 50px;
+  }
+  .servicios{
+    width: 47%;
+    height: 38%;
+  }
+  .servicios img{
+    width: 100%;
+  }
+  .iconosocial{
+    width: 80% !important;
+    padding: 7px;
+    box-sizing: content-box;
+    background: yellow;
+    border-radius: 50%;
+  }
+  .info-pago{
+    padding: 12px;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border: 1px dashed #7e7e7e;
+    gap: 10px;
+  }
+  .boton-pago{
+    width: 50%;
+    padding: 10px;
+    font-size: 1.2em;
+    color: white;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: flex-start;
+    display: flex;
+  }
+  .recojo{
+    padding: 10px 40px;
+    border: 2px dashed #7e7e7e ;
+  }
+  .pagos{
+    display: flex;
+    gap: 10px;
+  }
+  .numero{
+    width: 90%;
+    display: flex;
+  }
+  
+  .num{
+  width: 65%;
+    padding: 0.5rem;
+    font-size: 1.5em;
+    font-weight: 700;
+    text-decoration: underline;
+    border: 2px dashed;
+  }
+  
+.icon-copy{
+  width: 35%;
+    position:relative;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 700;
+    background-color: #f00;
+    color: #fff;
+    border: 1px solid #000;
+  }
+
+.flxx{
+  display: flex;
+  gap: 5px;
+}
+
+/*  responsive */
+@media only screen and (min-width: 720px)  {
+  .row{
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+ 
+  }
+  .popup__close{
+    right: 33%;
+  }
+  .env-wsp{
+    position: fixed;
+    right: 35px;
+  }
+}
+
+
+/** SCROLL SLIDER PRODUCTOS**/
+
+/* limit width so that content will need to scroll */
+.sl {
+  max-width: 1120px;
+  width: 100%;
+  margin: auto;
+}
+
+/* SCROLL SNAPPING */
+.scroll-container {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+.scroll-item {
+  scroll-snap-align: center;
+}
+/* make 3rd item bigger to show that items don't need to have the same width */
+
+
+/* GRID LAYOUT */
+.scroll-container[data-layoutmethod="grid"] {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  display: grid;
+  grid: auto / auto-flow max-content;
+  grid-gap: 1em;
+  align-items: center; /* vertically align children */
+}
+
+
+/* remove list styles */
+ul {
+  list-style: none;
+}
+
+.scroll-item {
+  /* make it square */
+  width: 16em;  
+
+  /* some basic styling */
+  background: #ccc;
+  border-radius: 0.2em;
+
+  /* center contents */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.env-wsp{
+  width: 60px;
+  position: fixed;
+  background-color: #0dc143;
+  bottom: 70px;
+  right: 5px;
+  border-radius: 50px;
+}

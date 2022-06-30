@@ -1,0 +1,262 @@
+
+:root {
+    --color-blue: #dfe5f6;
+    --color-green: #e5f6df;
+    --color-lilac: #e5dff6;
+    --color-purple: #c5b7ec;
+    --color-shadow-light: rgba(186, 172, 191, 0.35);
+    --color-shadow-dark: transparent;
+    --color-white: #ffffff;
+    --color-petrol: #000809;
+    --color-pink: #ebd4f3; 
+    --color-yellow: #f6f0df;
+    --font-fam-primary: sans-serif;
+    --shadow-before: 10px 10px 0px 0px;
+    --shadow-after: 5px 5px 0px 0px;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+.bkg{
+    background-image: url(../img/fondo.jpg);
+    background-size: cover;
+  
+}
+
+body {
+    font-family: var(--font-fam-primary);
+}
+button, .button {
+    outline: none;
+    background: #ff0000;
+    color: #fff;
+    border: 0px;
+    cursor: pointer;
+    padding: 1rem 1.8rem;
+    border-radius: 20px;
+    text-align: center;
+    text-decoration: none;
+/*    pointer-events: none; */
+}
+.container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column-reverse;
+  /*  gap: 20px; */
+  z-index: -2;
+  position: absolute;
+}
+
+.buttons {
+    display: none;
+}
+
+.difficulty__button {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: calc(50% - 20px);
+    left: calc(50% - 20px);
+    color: rgb(56, 15, 15);
+}
+
+.difficulty_text{
+    display: grid;
+    justify-items: flex-start;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    color: white;
+    font-size: 40px;
+    -webkit-text-fill-color: white;
+    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-width: 2px; 
+}
+
+.difficulty__buttons {
+    width: 130px;
+    height: 400px;
+    display: grid;
+    justify-items: center;
+}
+
+.difficulty__button {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.popup__close{
+    
+    text-decoration: none;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+    position: absolute;
+    top: 20px;
+    right: 3%;
+    width: 40px;
+    height: 40px;
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+}
+
+#chart {
+    display: inline-block;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+}
+
+.chart__front {
+    position: absolute;
+    width: 360px;
+    height: 360px;
+    background-image: url(../img/RULETA-F.png);
+    border-radius: 50%;
+    z-index: -1;
+    box-shadow: 0 0 11px rgba(33,33,33,.2); 
+}
+
+
+text {
+    pointer-events: none;
+}
+
+#result {
+    position: absolute;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-white);
+}
+
+#modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background: var(--color-white);
+    margin: 10% auto;
+    padding: 20px;
+    width: 90%;
+    height: 80%;
+    max-width: 400px;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    border: 1px solid var(--color-petrol);
+    animation-name: modalopen;
+    animation-duration: .5s;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 18px;
+}
+.modal-body{
+    padding: 15px;
+    border: 2px dashed #000000;
+}
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.modal-header h2 {
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 28px;
+    text-align: center;
+}
+.modal-body-container {
+    padding: 5px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+title {
+    font-size: 18px;
+    color: rgb(54, 51, 51);
+    text-transform: uppercase;
+    line-height: 1.6;
+}
+
+.spin-result {
+    font-size: 20px;
+    color: #000000;
+    font-weight: 600;
+}
+
+.closeBtn {
+    color: gray;
+    font-size: 50px;
+}
+
+.closeBtn:hover, .closeBtn:focus {
+    color: black;
+    cursor: pointer;
+}
+
+@keyframes modalopen {
+    from { opacity: 0 }
+    to { opacity: 1 }
+}
+.ubicacion-t{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+}
+.bold  {
+    font-weight:700;
+}
+
+
+
+/* popup */
+
+.popup {
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    top: 0;
+    justify-content: center;
+    align-items: center;
+  }
+  .popupsuper{
+    background-color: rgb(0 0 0 / 82%);
+    transform: scale(0);
+    opacity: 0;
+    visibility: hidden;
+  }
+  .popup:target {
+    transform: scale(1);
+    opacity: 1;
+    visibility: visible;
+    z-index: 2;
+    width: 100%;
+  }
