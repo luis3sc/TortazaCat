@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="ruleta.css">
+    <link rel="stylesheet" href="./css/ruleta.css">
+    <link rel="stylesheet" href="./css/estilos-form.css">
 </head>
 <body>
       <a href="index.html" class="popup__close">&times;</a>
@@ -30,7 +31,7 @@
         <div class="chart__front"></div>
         <div id="result"></div>
     </div>
-    <img src="logo_tortaza.webp" alt="" srcset="">
+    <img src="./img/logo_tortaza.webp" alt="" srcset="">
 </div>
 </div>
 <div id="modal">
@@ -54,9 +55,72 @@
           <p style="float:left;">Av. Los Fresnos 1271</p>
          <span style="margin-left: 10px;"> <a href="https://goo.gl/maps/uc9VFMGzLopWVatQ8" target="_blank">¿cómo llegar?</a>
         </div></span>
-        <a href="index.html" class="button">   Finalizar</a>
+        <a href="#validar" class="button"> Reclamar </a>
     </div>
 </div>
+<div id="validar" class="popup popupsuper">
+    <div class="modal-content">
+        <form action="" class="form" id="form" autocomplete="off">
+          <p class="form-titulo">Regístrate</p>
+
+          <div class="form-input myname">
+            <input type="text" id="myname">
+            <label for="myname">Nombre</label>
+            <p class="mensajeError"></p>
+          </div>
+         
+          <div class="form-input email">  
+            <input type="email" id="email">
+            <label for="email">Correo electrónico</label>
+            <p class="mensajeError"></p>
+          </div>
+
+          <div class="form-input mobile">
+            <input type="text" id="mobile" >
+            <label for="mobile">Celular</label>
+            <p class="mensajeError"></p>
+          </div>
+          
+          <div class="form-termsAndConditions termsAndConditions">
+            <input type="checkbox" id="termsAndConditions">
+            <label for="termsAndConditions">He leído y acepto los </label>
+            <a href="#">Términos y Condiciones</a>
+            <p class="mensajeError"></p>
+          </div>
+          <div class="form-boton" >
+            <input id="btn" type="submit" value="Enviar" onclick="window.location.href('#fin');" >
+          </div>
+          <p class="mensajeCorrecto"></p>
+        </form>
+      </div>
+</div>
+<div id="fin" class="popup popupsuper">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>FELICIDADES GANASTE 👌</h2>
+           <!-- <span class="closeBtn">&times;</span>  -->
+        </div>
+        <div class="modal-body">
+            <div class="modal-body-name modal-body-container">
+                <div class="spin-result spin-result-name"></div>
+            </div>
+            <div class="modal-body-price modal-body-container">
+                <div class="modal-body-title">Válido Hasta:</div>
+                <div class="spin-result spin-result-price"></div>
+            </div>
+            
+          </div>
+          <div class="ubicacion-t">
+          <p class="bold">Ubicación Tortaza La molina</p>
+          <p style="float:left;">Av. Los Fresnos 1271</p>
+         <span style="margin-left: 10px;"> <a href="https://goo.gl/maps/uc9VFMGzLopWVatQ8" target="_blank">¿cómo llegar?</a>
+        </div></span>
+        
+    </div>
+</div>
+
+<script src="./js/form.js"></script>
+<script src="./js/input-habilitar.js"></script>
 
 <script>
     // DATA
@@ -124,6 +188,12 @@ const rawData = [
     "ticker": "TORTA GRATIS",
     "name": "Torta gratis",
     "full_name": "TORTA GRATIS"
+  },
+  {
+    "cmc_rank": 11,
+    "ticker": "2 TORTA GRATIS",
+    "name": "2 Torta gratis",
+    "full_name": "2 TORTA GRATIS"
   }
 ];
 
@@ -206,6 +276,13 @@ let top10 = [
     "ticker": "1 TORTA GRATIS",
     "name": "1 TORTA GRATIS",
     "full_name": "1 TORTA GRATIS",
+    "price": "Domingo,10 2022"
+  },
+  {
+    "cmc_rank": 11,
+    "ticker": "2 TORTA GRATIS",
+    "name": "2 TORTA GRATIS",
+    "full_name": "2 TORTA GRATIS",
     "price": "Domingo,10 2022"
   }
 ];
@@ -397,5 +474,6 @@ box.addEventListener('click', updateSelection);
 //window.addEventListener('click', outsideClick);
 window.onload = render;
 </script>
+
 </body>
 </html>
